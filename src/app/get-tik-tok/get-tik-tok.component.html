@@ -1,1 +1,50 @@
-<p>get-tik-tok works!</p>
+<h3>Datatables Tiktok</h3>
+<table id="titok_table" class="display" datatable="ng">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>NICK NAME</th>
+      <th>SỐ FOLLOW</th>
+      <th>SỐ FOLLOWER</th>
+      <th>30 VIDEOS NEWEST</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{datatiktok.props.pageProps.userData.userId}}</td>
+      <td>{{datatiktok.props.pageProps.userData.nickName}}</td>
+      <td>{{datatiktok.props.pageProps.userData.following}}</td>
+      <td>{{datatiktok.props.pageProps.userData.fans}}</td>
+      <td>
+        <table id="titok_table_videos" class="display">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Create Time</th>
+              <th>Description</th>
+              <th>MusicURL</th>
+              <th>Comments Count</th>
+              <th>Diggs Count</th>
+              <th>Views Count</th>
+              <th>Share Count</th>
+              <th>VideoURL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let v of datatiktok.listVideos">
+              <td>{{v.id}}</td>
+              <td>{{v.createTime|date:'short':'UTC'}}</td>
+              <td>{{v.desc}}</td>
+              <td>{{v.music.playUrl}}</td>
+              <td>{{v.stats.commentCount}}</td>
+              <td>{{v.stats.diggCount}}</td>
+              <td>{{v.stats.playCount}}</td>
+              <td>{{v.stats.shareCount}}</td>
+              <td>{{v.video.playAddr}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>

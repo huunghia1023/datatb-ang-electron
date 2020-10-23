@@ -1,13 +1,116 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
-  <title>ElectronAngularApp</title>
-  <base href="/">
+  <title>DatatablesRouting</title>
+  <base href="./">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script>
+    if (typeof module === 'object') {
+      window.module = module;
+      module = undefined;
+    }
+
+  </script>
+  <!-- <script src="./assets/jquery.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="./assets/jquery.dataTables.js">
+  </script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css"> -->
+  <script>
+    window.jQuery = window.$ = require('jquery');
+
+  </script>
+  <script>
+    var $ = require('jquery');
+    require('datatables.net')(window, $);
+
+  </script>
+  <script>
+    if (window.module) module = window.module;
+
+  </script>
 </head>
+
 <body>
   <app-root></app-root>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <!-- <script>
+    var data;
+    $(document).ready(function () {
+      axios.get('https://api.mocki.io/v1/cc6f4542')
+        .then(res => res)
+        .then(r => {
+          data = r.data;
+          data.push({city: "HCM", name: "Nghia", follow: 22, follower: 30});
+          console.log(data);
+          var t = $('#table_id').DataTable({
+            "columnDefs": [{
+              "targets": 0,
+              "searchable": true,
+              "orderable": true
+
+            }],
+            // "order": [
+            //   [1, 'asc']
+            // ],
+            paging: true,
+            data: data,
+            columns: [{
+                "data": "", // can be null or undefined
+                "defaultContent": ""
+              },
+              {
+                data: "city"
+              },
+              {
+                data: "name"
+              },
+              {
+                data: "follow"
+              },
+              {
+                data: "follower"
+              },
+              {
+                data: "", // can be null or undefined
+                "defaultContent": "<i>Not set</i>"
+              },
+            ],
+          });
+
+          //t.on('order.dt search.dt', function () {
+          t.column(0, {
+            search: 'applied',
+            order: 'applied'
+          }).nodes().each(function (cell, i) {
+            cell.innerHTML = i + 1;
+          });
+
+          //t.on('order.dt search.dt', function(){}).draw();
+          //}).draw();
+          // $('#table_id').DataTable({
+
+
+
+          //   // console.log(r.data[1].city);
+
+          // });
+          // data.map((item,index)=>{
+          //     console.log(item);
+
+          //     document.getElementById('tb_bd').innerHTML+=`<tr>
+          //       <td>${index}</td>
+          //       <td>${item.name}</td>
+          //       <td>${item.city}</td>
+          //       <td>${item.follow}</td>
+          //       <td>${item.follower}</td>
+          //     </tr>`
+        })
+    });
+
+  </script> -->
 </body>
+
 </html>

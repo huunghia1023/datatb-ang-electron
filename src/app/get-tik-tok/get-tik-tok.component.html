@@ -11,12 +11,12 @@
   </thead>
   <tbody>
     <tr>
-      <td>{{datatiktok.props.pageProps.userData.userId}}</td>
-      <td>{{datatiktok.props.pageProps.userData.nickName}}</td>
-      <td>{{datatiktok.props.pageProps.userData.following}}</td>
-      <td>{{datatiktok.props.pageProps.userData.fans}}</td>
+      <td>{{datatiktok.props.pageProps.userInfo.user.id}}</td>
+      <td>{{datatiktok.props.pageProps.userInfo.user.nickname}}</td>
+      <td>{{datatiktok.props.pageProps.userInfo.stats.followingCount}}</td>
+      <td>{{datatiktok.props.pageProps.userInfo.stats.followerCount}}</td>
       <td>
-        <table id="titok_table_videos" class="display">
+        <table id="titok_table_videos" class="cell-border">
           <thead>
             <tr>
               <th>Id</th>
@@ -31,7 +31,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let v of datatiktok.listVideos">
+            <tr id="rowover" *ngFor="let v of datatiktok.listVideos">
               <td>{{v.id}}</td>
               <td>{{v.createTime|date:'short':'UTC'}}</td>
               <td>{{v.desc}}</td>

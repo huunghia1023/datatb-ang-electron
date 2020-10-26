@@ -11,7 +11,8 @@ function initWindow() {
   appWindow = new BrowserWindow({
     fullscreen: true,
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      webSecurity: false
     }
   })
   appWindow.loadURL(

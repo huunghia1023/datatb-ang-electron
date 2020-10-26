@@ -6,6 +6,7 @@ import {FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import Axios from 'axios';
 import { DataTableDirective } from 'angular-datatables';
 import { Subject } from 'rxjs';
+import { param } from 'jquery';
 
 declare var $: any;
 
@@ -42,9 +43,10 @@ export class AppComponent {
     .then(r=>{
       this.datas=r.data;
       this.dtTrigger.next();
-      //console.log(this.datas);
+      //console.log(JSON.stringify(this.datas));
       this.dtOptions={
         paging: true,
+        responsive:true,
         columns:[
           {
             "data":"",
@@ -79,7 +81,7 @@ export class AppComponent {
       // });
     })
 
-    
+
 
   }
   onSubmit(fordata){
@@ -92,12 +94,35 @@ export class AppComponent {
   commited(Ilocation: string, Iname: string, Ifollow: number, Ifollower: number) {
     $("#addUserModal").modal("hide");
     //console.log(Ilocation+ "\t"+Iname+"\t"+Ifollow+"\t"+Ifollower);
-    Swal.fire({
-      position: 'top-end',
-      icon: 'success',
-      title: 'Data: '+Ilocation+ "\t"+Iname+"\t"+Ifollow+"\t"+Ifollower,
-      showConfirmButton: false,
-      timer: 3000
+    let param={
+      city: Ilocation,
+      name: Iname,
+      follow: Ifollow,
+      follower: Ifollower
+    }
+    Axios.post('https://api.mocki.io/v1/cc6f4542',param)
+    .then(res=>{
+      if(res.status===200){
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: "Success",
+          showConfirmButton: false,
+          timer: 2000
+        })
+        this.datas.push(JSON.parse(res.config.data));
+        //console.log(this.datas);
+      }
+      else{
+        Swal.fire({
+          position: 'top-end',
+          icon: 'error',
+          title: "Ops...",
+          showConfirmButton: true,
+          timer: 2000
+        })
+      }
     })
+
   }
 }

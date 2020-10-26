@@ -1,0 +1,9 @@
+#tiktok_table{
+  width: 100%;
+}
+#titok_table_videos{
+  width: 100%;
+}
+#rowover td{
+  overflow: hidden;
+}

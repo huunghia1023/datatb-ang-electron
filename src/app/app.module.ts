@@ -5,11 +5,13 @@ import { AppComponent } from './app.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { GetTikTokComponent } from './get-tik-tok/get-tik-tok.component';
+import { UploadVideoComponent } from './upload-video/upload-video.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GetTikTokComponent
+    GetTikTokComponent,
+    UploadVideoComponent
   ],
   imports: [
     BrowserModule,

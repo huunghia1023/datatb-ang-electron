@@ -49,7 +49,6 @@ export class UploadVideoComponent implements OnInit {
     })
     .then(re=>re.json())
     .then(res=>{
-      res['data']=formData;
       console.log(res);
       // if(res.status===200){
       //   Swal.fire({

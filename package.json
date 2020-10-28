@@ -9,8 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "start:electron": "ng build --base-href ./ && electron .",
-    "electron": "ng build --base-href ./ && electron ."
+    "start:electron": "ng build --base-href ./ && electron ."
   },
   "private": true,
   "dependencies": {
@@ -25,7 +24,6 @@
     "angular-datatables": "^9.0.2",
     "axios": "^0.20.0",
     "bootstrap": "^4.5.3",
-    "crypt": "0.0.2",
     "datatables.net": "^1.10.22",
     "datatables.net-dt": "^1.10.22",
     "jquery": "^3.5.1",

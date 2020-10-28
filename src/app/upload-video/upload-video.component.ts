@@ -39,7 +39,6 @@ export class UploadVideoComponent implements OnInit {
           'accept':'application/json, text/plain, */*',
           'accept-encoding':'gzip, deflate, br',
           'accept-language':'en-US,en;q=0.9,vi;q=0.8',
-          'content-type':'application/x-www-form-urlencoded;charset=UTF-8',
           'Authorization': 'Basic '+btoa('huunghia1023@gmail.com:PassWordTest&1'),
           'Access-Control-Allow-Origin': '*',
           'cookie':'tt_webid=6886478503065126402;tt_webid_v2=6886478503065126402;_ga=GA1.2.849703431.1603383235;passport_csrf_token=94fa5faa79f77f8e61f7699af97917cf;store-idc=alisg;store-country-code=vn;s_v_web_id=verify_kgpw6m9u_QDielbJZ_3J37_4fmb_9H1T_My8enmAuzYuh;passport_auth_status=ad9a42c04cfe68a5409cc194ee6551bf%2C6ae083f17bbc90f7aaeb8ba8a1b407d4;odin_tt=ef763ff8461a3b67f0a3d15c5f8007a681f5b58d9f5f01cd526f771c9096a331128f3f2efe6c14d84fc358f915cc9175c77834a0ccd4140e204b995baaa653df;uid_tt=3d0df94b75ab55506f5fce0527bf5e4c96a456d705792048c840dddd565bf5df;uid_tt_ss=3d0df94b75ab55506f5fce0527bf5e4c96a456d705792048c840dddd565bf5df;sid_tt=2a9fa7ba2fa882051a30551387bfd6dc;sessionid=2a9fa7ba2fa882051a30551387bfd6dc;sessionid_ss=2a9fa7ba2fa882051a30551387bfd6dc;sid_guard=2a9fa7ba2fa882051a30551387bfd6dc%7C1603690248%7C5184000%7CFri%2C+25-Dec-2020+05%3A30%3A48+GMT;MONITOR_WEB_ID=60f39fd8-6b57-4fef-aeb3-2a9828d41b15;|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36',

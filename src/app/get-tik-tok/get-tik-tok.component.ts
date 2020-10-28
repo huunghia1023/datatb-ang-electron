@@ -6,7 +6,7 @@ import Axios from 'axios';
 import { HttpClientModule} from '@angular/common/http';
 
 
-const regex = /<script id="__NEXT_DATA__" type="application\/json" crossorigin="anonymous">(.*)<\/script><script\ crossorigin="anonymous"/gm;
+const regex = /<script id="__NEXT_DATA__" type="application\/json" crossorigin="anonymous">(.*)<\/script><script crossorigin="anonymous"/gm;
 const regex2 = /<script id="__NEXT_DATA__" type="application\/json" crossorigin="anonymous">(.*)<\/script><script crossorigin="anonymous" nomodule=""/gm;
 
 @Component({
@@ -74,7 +74,7 @@ export class GetTikTokComponent implements OnInit {
               }
               //lấy được trang video
               this.cmttitok = JSON.parse(this.mtt[1]);
-              //console.log(this.cmttitok);
+              console.log(this.cmttitok);
               // The result can be accessed through the `m`-variable.
               // this.m.forEach((match, groupIndex) => {
               //     console.log(`Found match, group ${groupIndex}: ${match}`);
@@ -116,6 +116,7 @@ export class GetTikTokComponent implements OnInit {
             //   console.log(re);
             // });
 
+
             // var request = require('request');
             // request.get({
             //   url: 'https://www.tiktok.com/api/comment/list/?aid=1988&app_name=tiktok_web&device_platform=web_pc&referer=https:%2F%2Fwww.tiktok.com%2F@cuongjin08%3Flang%3Dvi&user_agent=Mozilla%2F5.0+(Windows+NT+10.0%3B+Win64%3B+x64)+AppleWebKit%2F537.36+(KHTML,+like+Gecko)+Chrome%2F86.0.4240.111+Safari%2F537.36&cookie_enabled=true&screen_width=1536&screen_height=864&browser_language=en-US&browser_platform=Win32&browser_name=Mozilla&browser_version=5.0+(Windows+NT+10.0%3B+Win64%3B+x64)+AppleWebKit%2F537.36+(KHTML,+like+Gecko)+Chrome%2F86.0.4240.111+Safari%2F537.36&browser_online=true&ac=4g&timezone_name=Asia%2FSaigon&page_referer=https:%2F%2Fwww.tiktok.com%2F@test_thoi_ma%2Fvideo%2F6887797706345958658%3Flang%3Dvi&priority_region=VN&appId=1180&region=VN&appType=t&isAndroid=false&isMobile=false&isIOS=false&OS=windows&did=6886478503065126402&tt-web-region=VN&uid=6887788948962804737&aweme_id=6886005006001032450&cursor=0&count=20&app_language=vi&current_region=VN&fromWeb=1&channel_id=0&verifyFp=verify_kgpw6m9u_QDielbJZ_3J37_4fmb_9H1T_My8enmAuzYuh&_signature=_02B4Z6wo00901uxscYAAAICAMmUAM9hqBMrsbXUAAOSba5',
@@ -143,8 +144,6 @@ export class GetTikTokComponent implements OnInit {
             //})
           })
       })
-
-
   }
 
 }
